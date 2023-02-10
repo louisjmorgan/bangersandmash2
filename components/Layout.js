@@ -9,7 +9,7 @@ export default function Layout({ children, pages, data }) {
       <Box
         backgroundImage={`
         linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0)),
-        url('${data.image.url}')`}
+        url('${data.image}')`}
         backgroundSize="cover"
         position="relative"
         minHeight="50rem"
