@@ -5,7 +5,8 @@
     "dev:watch": "next-remote-watch ./posts",
     "build": "next build",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
