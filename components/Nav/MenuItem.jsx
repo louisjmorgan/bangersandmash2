@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Link, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/router'
+import { Text } from '@chakra-ui/react';
 import NextLink from 'next/link'
 
 function MenuItem({
  page, onChooseItem,
 }) {
-  // const router = useRouter()
   return (
     <NextLink
       as={`/${page.filePath.replace(/\.mdx?$/, '')}`}

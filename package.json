@@ -16,6 +16,7 @@
     "framer-motion": "^9.0.2",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.2",
+    "netlify-identity-widget": "^1.9.2",
     "next": "latest",
     "next-mdx-remote": "^4.3.0",
     "next-remote-watch": "1.0.0",

@@ -1,14 +1,12 @@
 /* eslint-disable no-nested-ternary */
-import { background, Flex, useColorMode } from '@chakra-ui/react';
+import { Flex, useColorMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router'
 import Links from './Links';
 // import Logo from './Logo';
 import MenuButton from './MenuButton';
 
 function NavContainer({ pages }) {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter()
   const toggle = () => setIsOpen(!isOpen);
   const { colorMode } = useColorMode();
   const [hasScrolled, setScrolled] = useState(false);

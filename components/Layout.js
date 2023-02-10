@@ -2,7 +2,6 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { Nav } from "./Nav";
 
 export default function Layout({ children, pages, data }) {
-  console.log(data);
   return (
     <>
       <Nav pages={pages} />
