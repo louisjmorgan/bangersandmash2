@@ -10,8 +10,9 @@ function ColorMode({hasScrolled, isOpen}) {
       onClick={toggleColorMode} 
       backgroundColor={hasScrolled || isOpen ? colorMode === "light" ? "whiteAlpha" : 'blackAlpha' : 'whiteAlpha'}
       color={hasScrolled || isOpen ? colorMode === "light" ? "background.dark" : 'background.light' : 'background.light'}
+      m={0}
     >
-      {colorMode === 'light' ? <MoonIcon color="inherit"/> : <SunIcon color="inherit" />}
+      {colorMode === 'light' ? <MoonIcon m={0} color="inherit"/> : <SunIcon m={0} color="inherit" />}
     </Button>
     </DarkMode>
   );

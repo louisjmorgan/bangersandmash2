@@ -81,22 +81,28 @@ const styles = {
       bg: mode('background.light', 'background.dark')(props),
       fontFamily: `${nunito.style.fontFamily}`,
       color: mode('background.dark', 'background.light')(props),
+      fontSize: "1.25rem",
+      lineHeight: 2,
     },
     h1: {
       fontWeight: "bold",
       color: 'background.light',
-      fontSize: "6rem",
+      fontSize: ["3.5rem", "5rem", "6rem"],
+      lineHeight: 1,
+      // width: ["min-content", "fit-content"],
+      width: "100%",
+      overflowWrap: 'break-word',
+      p: [3, 5, 10],
       textAlign: "center",
-      p: 10,
       fontFamily: `${staatliches.style.fontFamily}`,
     },
     h2: {
       fontWeight: "bold",
-      fontSize: "4rem",
+      fontSize: ["2.5rem", "3rem", "4rem"],
       textAlign: "center",
       fontFamily: `${staatliches.style.fontFamily}`,
       textTransform: 'uppercase',
-      p: 10,
+      p: [3, 5, 10],
       my: 10,
     },
     h3: {
@@ -118,6 +124,13 @@ const styles = {
       lineHeight: 2,
       mb: 7,
       fontFamily: `${nunito.style.fontFamily}`,
+      fontSize: ["1rem", "1.25rem"]
+    },
+    li: {
+      maxWidth: '80ch',
+      lineHeight: 1.25,
+      mb: 7,
+      fontFamily: `${nunito.style.fontFamily}`,
       fontSize: "1.25rem"
     },
     span: {
@@ -126,6 +139,9 @@ const styles = {
     a: {
       textDecoration: 'underline',
       color: '#FF4500'
+    },
+    ul: {
+      listStylePosition: 'inside',
     }
   }),
 };

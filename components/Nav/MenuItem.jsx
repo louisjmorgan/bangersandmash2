@@ -23,6 +23,7 @@ function MenuItem({
       <Text
         display="block"
         as="span"
+        width="max-content"
         // textStyle="active"
         textStyle={router.asPath === slug ? 'active' : ''}
       >

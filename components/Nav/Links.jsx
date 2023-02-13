@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box, chakra, Stack, Text } from '@chakra-ui/react';
+import { Box, chakra, Flex, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import ColorMode from './ColorMode';
 import MenuItem from './MenuItem';
@@ -18,16 +18,14 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
   const router = useRouter()
 
   return (
-    <Box
-      display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-      flexBasis={{ base: '100%', md: 'auto' }}
-    >
-      <Stack
+    
+      <Flex
         spacing={8}
         align="center"
-        justify={['center', 'space-around', 'flex-end', 'flex-end']}
-        direction={['column', 'row', 'row', 'row']}
+        justify={['center', 'space-around', 'space-between', 'space-around']}
+        direction={['column', 'column', 'row', 'row']}
         pt={[4, 4, 0, 0]}
+        width="100%"
       >         
         <MenuItem
           slug={'/'}
@@ -45,8 +43,7 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
             />
         ))}
         <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
-      </Stack>
-    </Box>
+      </Flex>
   );
 }
 

@@ -20,16 +20,13 @@ export default function Layout({ children, pages, data }) {
           <Text
             as="h1"
             // textStyle="hero"
-            maxWidth="20ch"
-            textAlign="center"
-            color={"background.light"}
             backdropFilter="blur(1px)"
           >
             {data.title}
           </Text>
         </Flex>
       </Box>
-      <Flex direction="column" align="center" p={10} pt={0} mb={10}>
+      <Flex direction="column" align="center" p={[5, 5, 10]} pt={0} mb={10}>
         {children}
       </Flex>
       <Footer />

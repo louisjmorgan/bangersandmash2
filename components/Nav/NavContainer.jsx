@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
-import { Flex, useColorMode } from '@chakra-ui/react';
+import { Box, Flex, useColorMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import ColorMode from './ColorMode';
 import Links from './Links';
 // import Logo from './Logo';
 import MenuButton from './MenuButton';
@@ -21,10 +22,9 @@ function NavContainer({ pages }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <Flex
+    <Box
       as="nav"
-      align="center"
-      justify="space-between"
+     
       wrap="wrap"
       w="100%"
       maxWidth="100vw"
@@ -45,8 +45,14 @@ function NavContainer({ pages }) {
     >
       {/* <Logo /> */}
       <MenuButton isOpen={isOpen} toggle={toggle} />
-      <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled}/>
-    </Flex>
+      <Box
+        display={{ base: isOpen ? 'block' : 'none', lg: 'block' }}
+        flexBasis="100%"
+        maxWidth="50rem"
+      >
+        <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled}/>
+      </Box>
+    </Box>
   );
 }
 
