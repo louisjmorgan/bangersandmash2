@@ -13,7 +13,7 @@ collections:
     files:
     - label: "Home"
       name: "home"
-      file: "content/home.md"
+      file: "content/home.mdx"
       fields: # The fields for each document, usually in front matter
         - {label: "Title", name: "title", widget: "string"}
         - {label: "Body", name: "body", widget: "markdown"}
