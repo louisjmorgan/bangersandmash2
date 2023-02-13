@@ -8,7 +8,7 @@ public_folder: images
 # publish_mode: editorial_workflow # For Drafts
 
 collections:
- - name: "home"
+  - name: "home"
     label: "home"
     files:
     - label: "Home"
