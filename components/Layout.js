@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import Footer from "./Footer";
 import { Nav } from "./Nav";
 
 export default function Layout({ children, pages, data }) {
@@ -17,7 +18,8 @@ export default function Layout({ children, pages, data }) {
       >
         <Flex direction="column" justify="center" align="center" height="100%">
           <Text
-            textStyle="hero"
+            as="h1"
+            // textStyle="hero"
             maxWidth="20ch"
             textAlign="center"
             color={"background.light"}
@@ -27,11 +29,10 @@ export default function Layout({ children, pages, data }) {
           </Text>
         </Flex>
       </Box>
-      <Flex
-      mt="5"
-      direction="column" 
-      align="center"
-      >{children}</Flex>
+      <Flex direction="column" align="center" p={10} pt={0} mb={10}>
+        {children}
+      </Flex>
+      <Footer />
     </>
   );
 }

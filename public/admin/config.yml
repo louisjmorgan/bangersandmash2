@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  # name: test-repo
+  # name: git-gateway
+  name: test-repo
   branch: main # Branch to update (optional; defaults to master)
 
 media_folder: public/images
@@ -8,6 +8,17 @@ public_folder: images
 # publish_mode: editorial_workflow # For Drafts
 
 collections:
+ - name: "home"
+    label: "home"
+    files:
+    - label: "Home"
+      name: "home"
+      file: "content/home.md"
+      fields: # The fields for each document, usually in front matter
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
+        - {label: "Image", name: "image", widget: "image"}
+      
   - name: "pages" # Used in routes, e.g., /admin/collections/blog
     label: "Page" # Used in the UI
     folder: "content/pages" # The path to the folder where the documents are stored

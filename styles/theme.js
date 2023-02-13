@@ -1,6 +1,18 @@
 /* eslint-disable quotes */
 import { extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
+import {Staatliches} from '@next/font/google';
+import {Nunito} from '@next/font/google';
+
+const staatliches = Staatliches({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+const nunito = Nunito({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 const config = {
   initialColorMode: 'light',
@@ -28,7 +40,8 @@ const textStyles = {
     color: 'background.light',
     fontSize: '4.5rem',
     fontWeight: 'bold'
-  }
+  },
+  
 };
 
 const layerStyles = {
@@ -40,6 +53,7 @@ const layerStyles = {
   }),
   lightGradient: { backgroundImage: 'linear-gradient(248deg, #dc2f52,#c55420, #a720c5, #20dcdb)' },
   darkGradient: { backgroundImage: 'linear-gradient(248deg, #00e4a9, #aed524, #f8d861, #cd528c)' },
+ 
 };
 
 const colors = {
@@ -65,23 +79,53 @@ const styles = {
   global: (props) => ({
     body: {
       bg: mode('background.light', 'background.dark')(props),
-      fontFamily: `'Barlow', sans-serif`,
+      fontFamily: `${nunito.style.fontFamily}`,
       color: mode('background.dark', 'background.light')(props),
     },
     h1: {
       fontWeight: "bold",
-      fontSize: "2rem",
+      color: 'background.light',
+      fontSize: "6rem",
       textAlign: "center",
       p: 10,
+      fontFamily: `${staatliches.style.fontFamily}`,
     },
     h2: {
       fontWeight: "bold",
-      fontSize: "1.5rem",
+      fontSize: "4rem",
       textAlign: "center",
+      fontFamily: `${staatliches.style.fontFamily}`,
+      textTransform: 'uppercase',
+      p: 10,
+      my: 10,
+    },
+    h3: {
+      fontWeight: "bold",
+      fontSize: "3rem",
+      textAlign: "center",
+      fontFamily: `${staatliches.style.fontFamily}`,
+      p: 5,
+    },
+    h4: {
+      fontWeight: "bold",
+      fontSize: "1.25rem",
+      textAlign: "center",
+      fontFamily: `${staatliches.style.fontFamily}`,
       p: 5,
     },
     p: {
-      maxWidth: '70ch',
+      maxWidth: '80ch',
+      lineHeight: 2,
+      mb: 7,
+      fontFamily: `${nunito.style.fontFamily}`,
+      fontSize: "1.25rem"
+    },
+    span: {
+      fontFamily: `${nunito.style.fontFamily}`,
+    },
+    a: {
+      textDecoration: 'underline',
+      color: '#FF4500'
     }
   }),
 };

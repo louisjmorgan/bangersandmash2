@@ -1,13 +1,22 @@
 /* eslint-disable react/prop-types */
-import { Box, Stack, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, chakra, Stack, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import ColorMode from './ColorMode';
 import MenuItem from './MenuItem';
+import { useRouter } from 'next/router'
+
+const MagicLink = chakra(NextLink, {
+  // ensure that you're forwarding all of the required props for your case
+  shouldForwardProp: (prop) => ['href', 'target', 'children','as', 'onClick'].includes(prop),
+})
 
 function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
   const onChooseItem = () => {
     setIsOpen(() => false);
   };
+
+  const router = useRouter()
+
   return (
     <Box
       display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
@@ -19,26 +28,23 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
         justify={['center', 'space-around', 'flex-end', 'flex-end']}
         direction={['column', 'row', 'row', 'row']}
         pt={[4, 4, 0, 0]}
-      > 
-      <Link
-      href={`/`}
-      onClick={onChooseItem}
-    >
-      <Text
-        display="block"
-        // textStyle={router.asPath === page.data.title ? 'active' : ''}
-      >
-        Home
-      </Text>
-    </Link>
-         {pages.map((page) => (
+      >         
+        <MenuItem
+          slug={'/'}
+          key="home"
+          onChooseItem={onChooseItem}
+          title="Home"
+          isHome
+          />
+        {pages.map((page) => (
           <MenuItem
-              key={page.data.title}
-              page={page} 
-              onChooseItem={onChooseItem}          
+            slug={`/${page.filePath.replace(/\.mdx?$/, '')}`}
+            key={page.data.title}
+            onChooseItem={onChooseItem}    
+            title={page.data.title}      
             />
         ))}
-         <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
+        <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
       </Stack>
     </Box>
   );
