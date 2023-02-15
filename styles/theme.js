@@ -107,7 +107,7 @@ const styles = {
     },
     h3: {
       fontWeight: "bold",
-      fontSize: "3rem",
+      fontSize: ["1.5rem", "2rem", "2.5rem"],
       textAlign: "center",
       fontFamily: `${staatliches.style.fontFamily}`,
       p: 5,

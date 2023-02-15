@@ -55,7 +55,6 @@ export const getStaticProps = async ({ params }) => {
   })
 
   pages.sort((a,b) => {
-    if (a.data.title === 'Music') return -1;
     if (b.data.title === 'Sign up') return -1;
     if (a.data.title === 'Info' && b.data.title === "Sign up") return -1;
     else return 0;

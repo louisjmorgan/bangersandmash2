@@ -17,7 +17,14 @@ export default function Layout({ children, pages, data }) {
         overflow="hidden"
       >
         <Carousel images={data.images} />
-        <Flex direction="column" justify="center" align="center" height="100%" pointerEvents="none">
+
+        <Flex
+          direction="column"
+          justify="center"
+          align="center"
+          height="100%"
+          pointerEvents="none"
+        >
           <Text
             as="h1"
             // textStyle="hero"
@@ -26,8 +33,9 @@ export default function Layout({ children, pages, data }) {
             {data.title}
           </Text>
         </Flex>
+
       </Box>
-      <Flex direction="column" align="center" p={[5, 5, 10]} pt={0} mb={10}>
+      <Flex direction="column" align="center" p={[10]} pt={0} mb={10} width="100%">
         {children}
       </Flex>
       <Footer />

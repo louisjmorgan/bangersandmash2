@@ -24,6 +24,23 @@ collections:
             name: images
             widget: list
             field: { label: Image, name: image, widget: image }
+  - name: "music"
+    label: "Music"
+    extension: "mdx"
+    create: false
+    format: "frontmatter"
+    files:
+      - label: "Music"
+        name: "music"
+        file: "content/music.mdx"
+        fields: # The fields for each document, usually in front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "url", name: "url", widget: "string" }
+          - label: images
+            name: images
+            widget: list
+            field: { label: Image, name: image, widget: image }
   - name: "pages" # Used in routes, e.g., /admin/collections/blog
     label: "Page" # Used in the UI
     folder: "content/pages" # The path to the folder where the documents are stored
@@ -39,6 +56,18 @@ collections:
         name: images
         widget: list
         field: { label: Image, name: image, widget: image }
+  - name: "artists" # Used in routes, e.g., /admin/collections/blog
+    label: "Artists" # Used in the UI
+    folder: "content/artists" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    extension: "mdx"
+    format: "frontmatter"
+    identifier_field: name
+    fields: # The fields for each document, usually in front matter
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { name: "Image", label: "Image", widget: "image" }
+      - { label: "url", name: "url", widget: "string" }
   - name: "gallery"
     label: "Gallery"
     folder: "content/gallery"

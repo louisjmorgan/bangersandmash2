@@ -41,6 +41,13 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
           title="Gallery"
           isDynamic={false}
           />
+        <MenuItem
+          slug={'/music'}
+          key="music"
+          onChooseItem={onChooseItem}
+          title="Music"
+          isDynamic={false}
+          />
         {pages.map((page) => (
           <MenuItem
             slug={`/${page.filePath.replace(/\.mdx?$/, '')}`}
