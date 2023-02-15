@@ -20,7 +20,7 @@ collections:
         fields: # The fields for each document, usually in front matter
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-          -label: images
+          - label: images
             name: images
             widget: list
             field: { label: Image, name: image, widget: image }
@@ -35,7 +35,10 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
+      - label: images
+            name: images
+            widget: list
+            field: { label: Image, name: image, widget: image }
   # - name: "gallery"
   #   label: "Gallery"
   #   folder: "content/gallery"
