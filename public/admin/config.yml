@@ -45,7 +45,7 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     create: true
-    identifier_field: image
+    identifier_field: src
     fields:
       - { name: "alt", label: "description", widget: "string" }
       - { name: "src", label: "Image", widget: "image" }
