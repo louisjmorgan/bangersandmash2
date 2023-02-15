@@ -36,9 +36,9 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - label: images
-            name: images
-            widget: list
-            field: { label: Image, name: image, widget: image }
+        name: images
+        widget: list
+        field: { label: Image, name: image, widget: image }
   # - name: "gallery"
   #   label: "Gallery"
   #   folder: "content/gallery"
