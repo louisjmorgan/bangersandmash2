@@ -1,16 +1,17 @@
 /* eslint-disable react/prop-types */
-import { Box, chakra, Flex, Stack, Text } from '@chakra-ui/react';
+import { Box, chakra, Flex, IconButton, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import ColorMode from './ColorMode';
 import MenuItem from './MenuItem';
 import { useRouter } from 'next/router'
+import { RiBubbleChartFill } from 'react-icons/ri';
 
 const MagicLink = chakra(NextLink, {
   // ensure that you're forwarding all of the required props for your case
   shouldForwardProp: (prop) => ['href', 'target', 'children','as', 'onClick'].includes(prop),
 })
 
-function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
+function Links({ isOpen, setIsOpen, pages, hasScrolled, bubble  }) {
   const onChooseItem = () => {
     setIsOpen(() => false);
   };
@@ -57,6 +58,7 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
             />
         ))}
         <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
+        {/* <IconButton bubble={bubble} hasScrolled={hasScrolled} isOpen={isOpen}  /> */}
       </Flex>
   );
 }

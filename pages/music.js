@@ -23,7 +23,6 @@ const ReactPlayer = dynamic(import("react-player"), { ssr: false });
 // here.
 
 export default function MusicPage({ source, data, artists, pages }) {
-  console.log(artists);
   return (
     <>
       {/* <Head>
@@ -43,7 +42,7 @@ export default function MusicPage({ source, data, artists, pages }) {
           </Box>
           </Flex>
           <h2>Artists</h2>
-          <Accordion allowMultiple allowToggle>
+          <Accordion allowMultiple>
             {artists.map((artist) => (
               <ArtistCard
                 key={artist.data.name}

@@ -19,10 +19,11 @@ const Player = chakra(ReactPlayer, {
 });
 
 export default function ArtistCard({ name, image, source, url }) {
+  console.log(image)
   return (
     <AccordionItem>
-      <AccordionButton as={Flex} align="center" justify="center">
-        <Image src={image} height={["5rem", "10rem"]} borderRadius="50%" />
+      <AccordionButton as={Flex} align="center" justify="center" cursor="pointer">
+        <Image src={image} height={["5rem", "10rem"]} borderRadius="50%" padding={5}/>
         <h3>{name}</h3>
         <AccordionIcon />
       </AccordionButton>

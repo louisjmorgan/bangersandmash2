@@ -1,4 +1,5 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Bubbles from "./Bubbles";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { Nav } from "./Nav";
@@ -6,6 +7,7 @@ import { Nav } from "./Nav";
 export default function Layout({ children, pages, data }) {
   return (
     <>
+    
       <Nav pages={pages} />
       <Box
         m={0}

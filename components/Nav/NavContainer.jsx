@@ -1,7 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import { Box, Flex, useColorMode, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Bubbles from '../Bubbles';
 import ColorMode from './ColorMode';
 import Links from './Links';
 // import Logo from './Logo';
@@ -22,7 +23,9 @@ function NavContainer({ pages }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const bubble = useDisclosure({isOpen: true})
   return (
+    <>
     <Box
       as="nav"
       wrap="wrap"
@@ -50,9 +53,12 @@ function NavContainer({ pages }) {
         flexBasis="100%"
         maxWidth="50rem"
       >
-        <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled}/>
+        <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled} bubble={bubble}/>
       </Box>
     </Box>
+    <Bubbles isOpen={bubble.isOpen}/>
+
+    </>
   );
 }
 
