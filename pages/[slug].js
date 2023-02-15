@@ -2,6 +2,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
+import Head from 'next/head'
 import path from 'path'
 import Layout from '../components/Layout'
 import { pageFilePaths, PAGES_PATH } from '../utils/mdxUtils'
@@ -14,11 +15,16 @@ import { pageFilePaths, PAGES_PATH } from '../utils/mdxUtils'
 
 export default function PostPage({ source, data, pages }) {
   return (
+    <>
+    <Head>
+      <title>{data.title} | Bangers & Mashtival</title>
+    </Head>
     <Layout pages={pages} data={data}>
       <main>
         <MDXRemote {...source}/>
       </main>
     </Layout>
+    </>
   )
 }
 
@@ -70,7 +76,6 @@ export const getStaticPaths = async () => {
     .map((path) => path.replace(/\.mdx?$/, ''))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
-
   return {
     paths,
     fallback: false,

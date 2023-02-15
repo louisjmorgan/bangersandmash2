@@ -9,18 +9,18 @@ public_folder: images
 
 collections:
   - name: "home"
-    label: "home"
+    label: "Home"
     extension: "mdx"
     create: false
     format: "frontmatter"
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.mdx"
-      fields: # The fields for each document, usually in front matter
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
-        - {label: "Image", name: "image", widget: "image"}     
+      - label: "Home"
+        name: "home"
+        file: "content/home.mdx"
+        fields: # The fields for each document, usually in front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Image", name: "image", widget: "image" }
   - name: "pages" # Used in routes, e.g., /admin/collections/blog
     label: "Page" # Used in the UI
     folder: "content/pages" # The path to the folder where the documents are stored
@@ -30,8 +30,15 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     identifier_field: slug
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Image", name: "image", widget: "image"}
-      
-    
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    fields:
+      - { name: "title", label: "Title" }
+      - { name: "image", label: "Image", widget: "image" }
