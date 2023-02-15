@@ -20,7 +20,6 @@ export default function Index({pages, data, source}) {
 export async function getStaticProps() {
   const source = fs.readFileSync(path.join(process.cwd(), 'content/home.mdx'))
   const { content, data } = matter(source)
-  console.log(source)
   const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {

@@ -11,6 +11,7 @@ export default function Layout({ children, pages, data }) {
         linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0)),
         url('${data.image}')`}
         backgroundSize="cover"
+        backgroundPosition="center"
         position="relative"
         minHeight="50rem"
         height="100vh"
