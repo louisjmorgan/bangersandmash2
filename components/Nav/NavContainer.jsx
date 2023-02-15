@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ColorMode from './ColorMode';
 import Links from './Links';
@@ -11,7 +12,7 @@ function NavContainer({ pages }) {
   const toggle = () => setIsOpen(!isOpen);
   const { colorMode } = useColorMode();
   const [hasScrolled, setScrolled] = useState(false);
-
+  const router = useRouter()
   const handleScroll = () => {
     if ((window.scrollY > 0)) setScrolled(true);
     else if ((window.scrollY === 0)) setScrolled(false);
@@ -38,7 +39,7 @@ function NavContainer({ pages }) {
         : isOpen ? colorMode === 'light' ? 'background.light' : 'background.dark' : 'transparent'}
       zIndex={5}
       boxShadow={hasScrolled && `0 1px 3px ${colorMode === 'light' ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.2)'}`}
-      color={hasScrolled || isOpen
+      color={hasScrolled || isOpen || router.asPath === '/gallery'
         ? colorMode === 'light' ? 'background.dark' : 'background.light'
         : 'background.light'}
     >

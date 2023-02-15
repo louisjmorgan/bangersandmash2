@@ -39,12 +39,13 @@ collections:
         name: images
         widget: list
         field: { label: Image, name: image, widget: image }
-  # - name: "gallery"
-  #   label: "Gallery"
-  #   folder: "content/gallery"
-  #   extension: "mdx"
-  #   format: "frontmatter"
-  #   create: true
-  #   fields:
-  #     - { name: "title", label: "Title" }
-  #     - { name: "image", label: "Image", widget: "image" }
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    identifier_field: image
+    fields:
+      - { name: "alt", label: "description", widget: "string" }
+      - { name: "src", label: "Image", widget: "image" }

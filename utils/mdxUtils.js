@@ -10,9 +10,9 @@ export const pageFilePaths = fs
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path))
 
-// export const GALLERY_PATH = path.join(process.cwd(), 'content/gallery')
+export const GALLERY_PATH = path.join(process.cwd(), 'content/gallery')
   
 
-// export const galleryFilePaths = fs
-//   .readdirSync(GALLERY_PATH)
-//   .filter((path) => /\.mdx?$/.test(path))
+export const galleryFilePaths = fs
+  .readdirSync(GALLERY_PATH)
+  .filter((path) => /\.mdx?$/.test(path))

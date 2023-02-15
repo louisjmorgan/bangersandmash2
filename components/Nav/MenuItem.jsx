@@ -9,13 +9,13 @@ const MagicLink = chakra(NextLink, {
 })
 
 function MenuItem({
- title, onChooseItem, slug, isHome = false,
+ title, onChooseItem, slug, isDynamic = true,
 }) {
   const router = useRouter()
   return (
     <MagicLink
-      as={isHome ? null : slug}
-      href={isHome ? '/' : `/[slug]`}
+      as={isDynamic ? slug : null}
+      href={isDynamic ? `/[slug]` : slug}
       onClick={onChooseItem}
       color="inherit"
       textDecoration="none"

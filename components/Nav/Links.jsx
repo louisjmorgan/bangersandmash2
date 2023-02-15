@@ -32,7 +32,14 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled  }) {
           key="home"
           onChooseItem={onChooseItem}
           title="Home"
-          isHome
+          isDynamic={false}
+          />
+        <MenuItem
+          slug={'/gallery'}
+          key="gallery"
+          onChooseItem={onChooseItem}
+          title="Gallery"
+          isDynamic={false}
           />
         {pages.map((page) => (
           <MenuItem
