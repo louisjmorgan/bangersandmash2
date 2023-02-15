@@ -33,12 +33,12 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Image", name: "image", widget: "image" }
-  - name: "gallery"
-    label: "Gallery"
-    folder: "content/gallery"
-    extension: "mdx"
-    format: "frontmatter"
-    create: true
-    fields:
-      - { name: "title", label: "Title" }
-      - { name: "image", label: "Image", widget: "image" }
+  # - name: "gallery"
+  #   label: "Gallery"
+  #   folder: "content/gallery"
+  #   extension: "mdx"
+  #   format: "frontmatter"
+  #   create: true
+  #   fields:
+  #     - { name: "title", label: "Title" }
+  #     - { name: "image", label: "Image", widget: "image" }
