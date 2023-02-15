@@ -16,9 +16,9 @@ import { pageFilePaths, PAGES_PATH } from '../utils/mdxUtils'
 export default function PostPage({ source, data, pages }) {
   return (
     <>
-    <Head>
+    {/* <Head>
       <title>{data.title} | Bangers & Mashtival</title>
-    </Head>
+    </Head> */}
     <Layout pages={pages} data={data}>
       <main>
         <MDXRemote {...source}/>

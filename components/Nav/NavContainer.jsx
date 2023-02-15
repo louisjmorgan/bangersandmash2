@@ -24,7 +24,6 @@ function NavContainer({ pages }) {
   return (
     <Box
       as="nav"
-     
       wrap="wrap"
       w="100%"
       maxWidth="100vw"

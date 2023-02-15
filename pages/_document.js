@@ -10,7 +10,7 @@ export default function Document() {
       <Head>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
-      <body>
+      <body style={{maxWidth: '100vw', overflowX: "hidden"}}>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />

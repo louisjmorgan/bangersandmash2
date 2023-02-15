@@ -1,4 +1,5 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { Nav } from "./Nav";
 
@@ -7,17 +8,16 @@ export default function Layout({ children, pages, data }) {
     <>
       <Nav pages={pages} />
       <Box
-        backgroundImage={`
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0)),
-        url('${data.image}')`}
-        backgroundSize="cover"
-        backgroundPosition="center"
+        m={0}
         position="relative"
+        display="block"
         minHeight="50rem"
         height="100vh"
-        width="100%"
+        width="100vw"
+        overflow="hidden"
       >
-        <Flex direction="column" justify="center" align="center" height="100%">
+        <Carousel images={data.images} />
+        <Flex direction="column" justify="center" align="center" height="100%" pointerEvents="none">
           <Text
             as="h1"
             // textStyle="hero"
