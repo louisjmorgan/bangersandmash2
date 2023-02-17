@@ -2,7 +2,7 @@
 import { Box, Flex, useColorMode, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Bubbles from '../Bubbles';
+import Bubbles from '../Bubbles/Bubbles';
 import ColorMode from './ColorMode';
 import Links from './Links';
 // import Logo from './Logo';
@@ -23,7 +23,7 @@ function NavContainer({ pages }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const bubble = useDisclosure({isOpen: true})
+  const [isBubbles, setBubbles] = useState(false)
   return (
     <>
     <Box
@@ -53,10 +53,10 @@ function NavContainer({ pages }) {
         flexBasis="100%"
         maxWidth="50rem"
       >
-        <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled} bubble={bubble}/>
+        <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled} isBubbles={isBubbles} setBubbles={setBubbles} />
       </Box>
     </Box>
-    <Bubbles isOpen={bubble.isOpen}/>
+    {isBubbles && <Bubbles />}
 
     </>
   );

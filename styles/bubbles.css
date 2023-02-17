@@ -10,84 +10,96 @@ z-index: 5;
 pointer-events: none;
 }
 
+#relative-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
 /* KEYFRAMES */
-
-@-webkit-keyframes animateBubble {
-  0% {
-      margin-top: 1000px;
-  }
-  100% {
-      margin-top: -100%;
-  }
-}
-
-@-moz-keyframes animateBubble {
-  0% {
-      margin-top: 1000px;
-  }
-  100% {
-      margin-top: -100%;
-  }
-}
 
 @keyframes animateBubble {
   0% {
-      margin-top: 1000px;
+      transform: translateX(0) translateY(0);
+  }
+  12.5% {
+    transform: translateX(25px) translateY(-12.5vh);
+  }
+  25% {
+    transform: translateX(50px) translateY(-25vh);
+  }
+  37.5% {
+    transform: translateX(25px) translateY(-37.5vh);
+  }
+  50% {
+    transform: translateX(0) translateY(-50vh);
+  }
+  62.5% {
+    transform: translateX(25px) translateY(-62.5vh);
+  }
+  75% {
+    transform: translateX(50px) translateY(-75vh);
+  }
+  87.5% {
+    transform: translateX(0) translateY(-87.5vh);
   }
   100% {
-      margin-top: -100%;
+      transform: translateX(25px) translateY(-100vh);
   }
 }
 
 @-webkit-keyframes sideWays { 
   0% { 
-      margin-left:0px;
+      transform: translateX(0px);
   }
   100% { 
-      margin-left:50px;
+      transform: translateX(50px);
   }
 }
 
 @-moz-keyframes sideWays { 
   0% { 
-      margin-left:0px;
+      transform: translateX(0px);
   }
   100% { 
-      margin-left:50px;
+      transform: translateX(50px);
   }
 }
 
 @keyframes sideWays { 
   0% { 
-      margin-left:0px;
+      transform: translateX(0px);
   }
   100% { 
-      margin-left:50px;
+      transform: translateX(50px);
   }
 }
 
 /* ANIMATIONS */
 
 .x1 {
-  -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
--moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-
-left: -5%;
-top: 5%;
-
--webkit-transform: scale(0.6);
+  -webkit-transform: scale(0.6);
 -moz-transform: scale(0.6);
 transform: scale(0.6);
+
+  -webkit-animation: animateBubble 25s linear infinite;
+-moz-animation: animateBubble 25s linear infinite;
+animation: animateBubble 25s linear infinite;
+
+left: -5%;
+bottom: -200px;
+/* top: 5%; */
+
+
 }
 
 .x2 {
-  -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
--moz-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 20s linear infinite;
+-moz-animation: animateBubble 20s linear infinite;
+animation: animateBubble 20s linear infinite;
 
 left: 5%;
-top: 80%;
+bottom: -100px;
+/* top: 80%; */
 
 -webkit-transform: scale(0.4);
 -moz-transform: scale(0.4);
@@ -95,12 +107,13 @@ transform: scale(0.4);
 }
 
 .x3 {
-  -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
--moz-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 28s linear infinite;
+-moz-animation: animateBubble 28s linear infinite;
+animation: animateBubble 28s linear infinite;
 
 left: 10%;
-top: 40%;
+bottom: -300px;
+/* top: 40%; */
 
 -webkit-transform: scale(0.7);
 -moz-transform: scale(0.7);
@@ -108,12 +121,13 @@ transform: scale(0.7);
 }
 
 .x4 {
-  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
--moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 22s linear infinite;
+-moz-animation: animateBubble 22s linear infinite;
+animation: animateBubble 22s linear infinite;
 
 left: 20%;
-top: 0;
+bottom: -50px;
+/* top: 0; */
 
 -webkit-transform: scale(0.3);
 -moz-transform: scale(0.3);
@@ -121,12 +135,13 @@ transform: scale(0.3);
 }
 
 .x5 {
-  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
--moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 29s linear infinite;
+-moz-animation: animateBubble 29s linear infinite;
+animation: animateBubble 29s linear infinite;
 
 left: 30%;
-top: 50%;
+bottom: -150px;
+/* top: 50%; */
 
 -webkit-transform: scale(0.5);
 -moz-transform: scale(0.5);
@@ -134,12 +149,13 @@ transform: scale(0.5);
 }
 
 .x6 {
-  -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
--moz-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 21s linear infinite;
+-moz-animation: animateBubble 21s linear infinite;
+animation: animateBubble 21s linear infinite;
 
 left: 50%;
-top: 0;
+bottom: 0;
+/* top: 0; */
 
 -webkit-transform: scale(0.8);
 -moz-transform: scale(0.8);
@@ -147,12 +163,13 @@ transform: scale(0.8);
 }
 
 .x7 {
-  -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
--moz-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 20s linear infinite;
+-moz-animation: animateBubble 20s linear infinite;
+animation: animateBubble 20s linear infinite;
 
 left: 65%;
-top: 70%;
+bottom: -400px;
+/* top: 70%; */
 
 -webkit-transform: scale(0.4);
 -moz-transform: scale(0.4);
@@ -160,12 +177,13 @@ transform: scale(0.4);
 }
 
 .x8 {
-  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
--moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 22s linear infinite;
+-moz-animation: animateBubble 22s linear infinite;
+animation: animateBubble 22s linear infinite;
 
 left: 80%;
-top: 10%;
+bottom: -250px;
+/* top: 10%; */
 
 -webkit-transform: scale(0.3);
 -moz-transform: scale(0.3);
@@ -173,12 +191,13 @@ transform: scale(0.3);
 }
 
 .x9 {
-  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
--moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 29s linear infinite;
+-moz-animation: animateBubble 29s linear infinite;
+animation: animateBubble 29s linear infinite;
 
 left: 90%;
-top: 50%;
+bottom: -800px;
+/* top: 50%; */
 
 -webkit-transform: scale(0.6);
 -moz-transform: scale(0.6);
@@ -186,12 +205,13 @@ transform: scale(0.6);
 }
 
 .x10 {
-  -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
--moz-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 26s linear infinite;
+-moz-animation: animateBubble 26s linear infinite;
+animation: animateBubble 26s linear infinite;
 
 left: 80%;
-top: 80%;
+bottom: -200px;
+/* top: 80%; */
 
 -webkit-transform: scale(0.3);
 -moz-transform: scale(0.3);
@@ -212,6 +232,7 @@ box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 25
   height: 200px;
 position: absolute;
 width: 200px;
+transform: translateY(0);
 }
 
 .bubble:after {
@@ -234,6 +255,6 @@ box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
 content: "";
   height: 180px;
 left: 10px;
-position: absolute;
+/* position: absolute; */
 width: 180px;
 }

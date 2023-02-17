@@ -16,7 +16,8 @@
     "@next/font": "^13.1.6",
     "embla-carousel-autoplay": "^7.0.9",
     "embla-carousel-react": "^7.0.9",
-    "framer-motion": "^9.0.2",
+    "file-loader": "^6.2.0",
+    "framer-motion": "^9.0.3",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.2",
     "netlify-identity-widget": "^1.9.2",
@@ -30,10 +31,12 @@
     "react-photo-album": "^2.0.2",
     "react-player": "^2.11.2",
     "react-slick": "^0.29.0",
+    "use-sound": "^4.0.1",
     "yet-another-react-lightbox": "^2.3.1"
   },
   "devDependencies": {
     "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6"
+    "eslint-config-next": "13.1.6",
+    "url-loader": "^4.1.1"
   }
 }

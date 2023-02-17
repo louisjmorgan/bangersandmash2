@@ -5,13 +5,14 @@ import ColorMode from './ColorMode';
 import MenuItem from './MenuItem';
 import { useRouter } from 'next/router'
 import { RiBubbleChartFill } from 'react-icons/ri';
+import BubbleMode from './BubbleMode';
 
 const MagicLink = chakra(NextLink, {
   // ensure that you're forwarding all of the required props for your case
   shouldForwardProp: (prop) => ['href', 'target', 'children','as', 'onClick'].includes(prop),
 })
 
-function Links({ isOpen, setIsOpen, pages, hasScrolled, bubble  }) {
+function Links({ isOpen, setIsOpen, pages, hasScrolled, setBubbles, isBubbles }) {
   const onChooseItem = () => {
     setIsOpen(() => false);
   };
@@ -58,7 +59,7 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled, bubble  }) {
             />
         ))}
         <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
-        {/* <IconButton bubble={bubble} hasScrolled={hasScrolled} isOpen={isOpen}  /> */}
+        <BubbleMode setBubbles={setBubbles} isBubbles={isBubbles} hasScrolled={hasScrolled} isOpen={isOpen}  />
       </Flex>
   );
 }

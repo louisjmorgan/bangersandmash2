@@ -25,6 +25,9 @@ export default function Carousel({ images }) {
       color="white"
       ref={emblaRef}
       cursor="pointer"
+      sx={{
+        WebkitTapHighlightColor: 'transparent',
+      }}
     >
       <Flex height="100%" align="start" overflow="hidden">
         {images.map((img) => (

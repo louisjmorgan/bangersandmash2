@@ -3,14 +3,19 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
 import { MdBubbleChart } from 'react-icons/md';
 
-function ColorMode({hasScrolled, isOpen, bubble}) {
+function BubbleMode({hasScrolled, isOpen, setBubbles, isBubbles}) {
   const { colorMode } = useColorMode();
   const router = useRouter()
+  const onClick = () => {
+    setBubbles(prev => !prev)
+  }
   return (
     <DarkMode>
     <Button
-      onClick={bubble.onToggle}
-      backgroundColor={hasScrolled || isOpen ? colorMode === "light" ? "whiteAlpha" : 'blackAlpha' : 'whiteAlpha'}
+      onClick={onClick}
+      backgroundColor={
+        isBubbles ? 'green.500' :
+        hasScrolled || isOpen ? colorMode === "light" ? "whiteAlpha" : 'blackAlpha' : 'whiteAlpha'}
       color={hasScrolled || isOpen || router.asPath === '/gallery' ? colorMode === "light" ? "background.dark" : 'background.light' : 'background.light'}
       m={0}
     >
@@ -20,4 +25,4 @@ function ColorMode({hasScrolled, isOpen, bubble}) {
   );
 }
 
-export default ColorMode;
+export default BubbleMode;

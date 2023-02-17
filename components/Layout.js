@@ -1,5 +1,4 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import Bubbles from "./Bubbles";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
 import { Nav } from "./Nav";
