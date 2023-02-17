@@ -15,8 +15,6 @@ function randomize(num, dev) {
   return num + (Math.random() * 2 - 1) * dev;
 }
 
-console.log(randomize(4, 1));
-
 const MotionBox = chakra(motion.div, {
   /**
    * Allow motion props and non-Chakra props to be forwarded.
