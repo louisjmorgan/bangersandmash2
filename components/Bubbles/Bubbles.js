@@ -2,6 +2,7 @@ import { Box, chakra, shouldForwardProp } from "@chakra-ui/react";
 import { isValidMotionProp, motion, useAnimationControls } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import useSound from "use-sound";
+import useWindowSize from "../../utils/useWindowSize";
 import Bubble from "./Bubble";
 
 function randomize(num, dev) {
@@ -45,13 +46,11 @@ function Bubbles() {
           // variants={variants}
           pointerEvents="none"
         >
-          {Array.from({ length: 10 }).map((_, i) => (
+          {Array.from({ length: 50 }).map((_, i) => (
             <Bubble
-              duration={durations[i]}
               play={play}
               key={i}
               i={i}
-              size={sizes[i]}
             />
           ))}
         </MotionBox>

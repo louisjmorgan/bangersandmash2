@@ -22,9 +22,10 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled, setBubbles, isBubbles })
   return (
     
       <Flex
-        spacing={8}
+        spacing={10}
+        gap={[3, 3, 0, 5]}
         align="center"
-        justify={['center', 'space-around', 'space-between', 'space-around']}
+        justify={['center', 'space-around', 'space-between', 'start']}
         direction={['column', 'column', 'row', 'row']}
         pt={[4, 4, 0, 0]}
         width="100%"

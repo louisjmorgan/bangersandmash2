@@ -25,6 +25,7 @@ function MenuItem({
         as="span"
         width="max-content"
         // textStyle="active"
+        fontSize={['1rem', '1rem', '1rem', '1rem', '1.25rem']}
         textStyle={router.asPath === slug ? 'active' : ''}
       >
         {title}

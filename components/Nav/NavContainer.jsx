@@ -49,9 +49,9 @@ function NavContainer({ pages }) {
       {/* <Logo /> */}
       <MenuButton isOpen={isOpen} toggle={toggle} />
       <Box
-        display={{ base: isOpen ? 'block' : 'none', lg: 'block' }}
+        display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
         flexBasis="100%"
-        maxWidth="50rem"
+        maxWidth="70rem"
       >
         <Links pages={pages} isOpen={isOpen} setIsOpen={setIsOpen} hasScrolled={hasScrolled} isBubbles={isBubbles} setBubbles={setBubbles} />
       </Box>
