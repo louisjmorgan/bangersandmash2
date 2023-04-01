@@ -3,8 +3,9 @@ backend:
   # name: test-repo
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: public/images
-public_folder: images
+site_url: https://creative-buttercream-ad446d.netlify.app/
+media_folder: /images
+public_folder: public/images
 # publish_mode: editorial_workflow # For Drafts
 
 collections:
@@ -20,6 +21,23 @@ collections:
         fields: # The fields for each document, usually in front matter
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+          - label: images
+            name: images
+            widget: list
+            field: { label: Image, name: image, widget: image }
+  - name: "sign-up"
+    label: "Sign-up"
+    extension: "mdx"
+    create: false
+    format: "frontmatter"
+    files:
+      - label: "Sign-up"
+        name: "sign-up"
+        file: "content/sign-up.mdx"
+        fields: # The fields for each document, usually in front matter
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Form", name: "form", widget: "string" }
           - label: images
             name: images
             widget: list

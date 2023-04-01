@@ -28,9 +28,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "react-image-gallery": "^1.2.11",
     "react-photo-album": "^2.0.2",
     "react-player": "^2.11.2",
     "react-slick": "^0.29.0",
+    "styled-components": "^5.3.9",
     "use-sound": "^4.0.1",
     "yet-another-react-lightbox": "^2.3.1"
   },

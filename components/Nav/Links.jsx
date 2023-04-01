@@ -59,6 +59,13 @@ function Links({ isOpen, setIsOpen, pages, hasScrolled, setBubbles, isBubbles })
             title={page.data.title}      
             />
         ))}
+        <MenuItem
+          slug={'/sign-up'}
+          key="tickets"
+          onChooseItem={onChooseItem}
+          title="Tickets"
+          isDynamic={false}
+          />
         <ColorMode hasScrolled={hasScrolled} isOpen={isOpen}/>
         <BubbleMode setBubbles={setBubbles} isBubbles={isBubbles} hasScrolled={hasScrolled} isOpen={isOpen}  />
       </Flex>
